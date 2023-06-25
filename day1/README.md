@@ -18,18 +18,21 @@
 
 **JSX stands for JavaScript XML. JSX allows us to write HTML elements with JavaScript code. An HTML element has an opening and closing tags, content, and attribute in the opening tag. However, some HTML elements may not have content and a closing tag - they are self closing elements. To create HTML elements in React we do not use the createElement() instead we just use JSX elements. Therefore, JSX makes it easier to write and add HTML elements in React. JSX will be converted to JavaScript on browser using a transpiler - babel.js. Babel is a library which transpiles JSX to pure JavaScript and latest JavaScript to older version. See the JSX code below.**
 
-` // JSX syntax
+``` 
+// JSX syntax
 // we don't need to use quotes with JSX
 
 const jsxElement = <h1>I am a JSX element</h1>
 const welcome = <h1>Welcome to 30 Days of React Challenge</h1>
-const data = <small>Oct 2, 2020</small> `
+const data = <small>Oct 2, 2020</small> 
+```
 
 ## As you can see the above code consists of JSX declaration of some tags in html##
 
 **RENDERING JSX ELEMENTS**
 
-` <html>
+``` 
+<html>
     <title>HELLO REACT</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -50,11 +53,13 @@ const data = <small>Oct 2, 2020</small> `
     </body>
 
 
-</html> `
+</html> 
+```
 
 **HOW TO RENDER MORE THAN ONE COMPONENT INSIDE THE RENDER FUNCTION**
 
-` <!DOCTYPE html>
+```
+ <!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -118,6 +123,7 @@ const data = <small>Oct 2, 2020</small> `
       //  ReactDOM.render([header, main, footer], rootElement)
     </script>
   </body>
-</html>`
+</html>
+```
 ![OUTPUT OF THE ABOVE](image-1.png)
 ------------------------------------------------------------------------------------------------------------------------------
