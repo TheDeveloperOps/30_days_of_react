@@ -12,4 +12,112 @@
 6. React latest release is 18
 7. React versions(https://legacy.reactjs.org/versions/)
 8. React official documentation can be found here(https://legacy.reactjs.org/docs/getting-started.html)
+---------------------------------------------------------------------------------------------------------------------------------
 
+# JSX JAVASCRIPT XML 
+
+**JSX stands for JavaScript XML. JSX allows us to write HTML elements with JavaScript code. An HTML element has an opening and closing tags, content, and attribute in the opening tag. However, some HTML elements may not have content and a closing tag - they are self closing elements. To create HTML elements in React we do not use the createElement() instead we just use JSX elements. Therefore, JSX makes it easier to write and add HTML elements in React. JSX will be converted to JavaScript on browser using a transpiler - babel.js. Babel is a library which transpiles JSX to pure JavaScript and latest JavaScript to older version. See the JSX code below.**
+
+`// JSX syntax
+// we don't need to use quotes with JSX
+
+const jsxElement = <h1>I am a JSX element</h1>
+const welcome = <h1>Welcome to 30 Days of React Challenge</h1>
+const data = <small>Oct 2, 2020</small>`
+
+## As you can see the above code consists of JSX declaration of some tags in html##
+
+**RENDERING JSX ELEMENTS**
+
+`<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="app"></div>
+        <script type="text/babel">
+            const header = (
+                <header>
+                    <h1> Hi this bala </h1>
+                    <h2> Im Learning React </h2>
+                    <p> Since I'm out of imaginary words, I'm typing this </p>
+                </header>
+            )
+            ReactDOM.render(<h1>Hello this is bala murugan</h1>,document.querySelector('#app'));
+            ReactDOM.render(header,document.querySelector('#app'))
+        </script>
+    </body>
+
+
+</html>`
+
+**HOW TO RENDER MORE THAN ONE COMPONENT INSIDE THE RENDER FUNCTION**
+
+`<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days Of React Challenge</title>
+  </head>
+
+  <body>
+    <div class="root"></div>
+
+ <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // To get the root element from the HTML document
+      const rootElement = document.querySelector('.root')
+
+      // JSX element, header
+      const header = (
+        <header>
+          <h1>Welcome to 30 Days Of React</h1>
+          <h2>Getting Started React</h2>
+          <h3>JavaScript Library</h3>
+          <p>Asabeneh Yetayeh</p>
+          <small>Oct 2, 2020</small>
+        </header>
+      )
+
+      // JSX element, main
+      const main = (
+        <main>
+          <p>Prerequisite to get started react.js:</p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </main>
+      )
+
+      // JSX element, footer
+      const footer = (
+        <footer>
+          <p>Copyright 2020</p>
+        </footer>
+      )
+
+      // JSX element, app, a container or a parent
+      const app = (
+        <div>
+          {header}
+          {main}
+          {footer}
+        </div>
+      )
+
+      // we render the JSX element using the ReactDOM package
+      // ReactDOM has the render method and the render method takes two argument
+      ReactDOM.render(app, rootElement)
+      // or
+      //  ReactDOM.render([header, main, footer], rootElement)
+    </script>
+  </body>
+</html>`
+![OUTPUT OF THE ABOVE](image-1.png)
+------------------------------------------------------------------------------------------------------------------------------
