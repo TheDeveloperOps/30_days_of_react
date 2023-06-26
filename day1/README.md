@@ -184,3 +184,5 @@ const usageInCode = (
 )
 
 ```
+
+# DAY 1 ENDS #
