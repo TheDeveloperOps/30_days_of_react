@@ -125,5 +125,5 @@ const data = <small>Oct 2, 2020</small>
   </body>
 </html>
 ```
-![OUTPUT OF THE ABOVE](C:\Users\jarvi\Desktop\CLUMSY\REACT LEARN\day1\image-1.png)
+![OUTPUT OF THE ABOVE](image-1.png)
 ------------------------------------------------------------------------------------------------------------------------------
