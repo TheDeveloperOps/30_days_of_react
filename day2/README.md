@@ -10,3 +10,20 @@
 
 ![Alt text](image-1.png)
 ## The same code is written with JSX in a simple manner. Which makes the code easier and more understandable. 
+
+# The JavaScript is delivered to the browser after JSX 
+
+## Consider the following code 
+
+![Alt text](image-2.png)
+## The above code snipped is transpiled into the following 
+
+```
+React.CreateElement("div,null,
+React.creatElement("img",{src:"profile.jpg",alt:"profile Photo"}),
+React.createElement(
+    "h1",null,"Welcome Back everyone, this is bala 
+))
+```
+
+## I learnt the difference hope you did too.
