@@ -171,6 +171,7 @@ const usageInCode = (
 ![Alt text](image-3.png)
 **In order to remove this, we should assign unique key to every child and that's good practice too, because you will have control over your child elements.**
 
+```
 const items = ['nasa','spacex','isro'];
 /// we are assigning key as name of the list item itself.
 const formattedList = items.map((item)=> <li key={tech}> {item}</li>) ;
