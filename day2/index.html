@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="app-jsx"></div>
+    <script type="text/babel">
+        class HelloWorld extends React.Component{
+            render(){
+                return(
+                    React.createElement(
+                        'h1',{className:'large'},
+                        'Hello all This is Bala react Developer'
+                    )
+                );
+            }
+        }
+
+        class HelloWorldJsx extends React.Component{
+            render(){
+                return <h1 className="large"> Hello all this is Bala react developer </h1>
+            }
+        }
+        ReactDOM.render(<HelloWorld/>,document.getElementById("app"));
+        ReactDOM.render(<HelloWorldJsx/>,document.getElementById("app-jsx"))
+    </script>
+</body>
+</html>
