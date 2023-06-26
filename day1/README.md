@@ -1,4 +1,6 @@
 # DAY_1
+# Date 26 June 2023 
+
 # ABOUT REACT JS , ES6 and BABEL 
 **React is a JavaScript library for building a reusable user interface(UI). It was initially released on May 29, 2013. The current version is 16.13.1 and somehow it is stable. React was created by Facebook. React makes creating UI components very easy. The official React documentation can be found here. When we work with React we do not interact directly with the DOM. React has its own way to handle the DOM(Document Object Model) manipulation. React uses its virtual DOM to make new changes and it updates only the element, that needs changing. Do not directly interact with DOM when you build a React Application and leave the DOM manipulation job for the React virtual DOM. In this challenge, we will develop 10-15 web applications using React. A web application, or a website, is made of buttons, links, forms with different input fields, header, footer, sections, articles, texts, images, audios, videos and boxes with different shapes. We use react to make a reusable UI components of a website.**
 
@@ -186,3 +188,5 @@ const usageInCode = (
 ```
 
 # DAY 1 ENDS #
+# 4am to 6 am #
+# Date 26 Jun 2023 #
