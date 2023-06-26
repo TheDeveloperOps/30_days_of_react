@@ -127,3 +127,59 @@ const data = <small>Oct 2, 2020</small>
 ```
 ![OUTPUT OF THE ABOVE](image-1.png)
 ------------------------------------------------------------------------------------------------------------------------------
+
+**INJECTING DATA INTO JSX**
+
+```
+const welcome = 'Welcome my github page'
+            const title ='Here you can find the 30 days of my learning towards reactjs'
+            const authorName = 'BALA MURUGAN'
+            const date ='26 June 2023 '
+
+            const main = (
+                <div >
+                    <h1>{welcome}</h1>
+                    <h2>{title}</h2>
+                    <p>
+                        Author : {authorName}
+                        </p>
+                    <small>Data: {date}</small>
+                </div>
+            )
+```
+![Alt text](image.png)
+--------------------------------------------------------------------------------------
+**THE LIST ITEMS THAT WE SPECIFY WILL BE PASTED AS HORIZONTAL OR IT MAY LOOK CLUMSY**
+
+**SO IN ORDER TO ACHIEVE GOOD PROGRAM, WE HAVE TO FUNCTIONAL PROGRAM IT**
+
+```
+const items = ['nasa','spacex','isro'];
+const formattedList = items.map((item)=> <li> {item}</li>) ;
+
+const usageInCode = (
+    <div>
+    // every item returned by the map function will take place inside as list item.
+    <ul>{formattedList}</ul>
+    </div>
+)
+
+```
+![Alt text](image-2.png)
+
+**NOTE: ERROR OCCURRED THAT IS **
+![Alt text](image-3.png)
+**In order to remove this, we should assign unique key to every child and that's good practice too, because you will have control over your child elements.**
+
+const items = ['nasa','spacex','isro'];
+/// we are assigning key as name of the list item itself.
+const formattedList = items.map((item)=> <li key={tech}> {item}</li>) ;
+
+const usageInCode = (
+    <div>
+    // every item returned by the map function will take place inside as list item.
+    <ul>{formattedList}</ul>
+    </div>
+)
+
+```
