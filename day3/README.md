@@ -111,6 +111,7 @@ ReactDOM.render(jsxElement, rootElement)
 
 # Some more Complex Components
 
+```
 *index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
