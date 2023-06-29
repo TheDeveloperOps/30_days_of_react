@@ -12,3 +12,7 @@
 # 28 June 2023 
 **Setting up Environment For Local React Development**
 ***No use of CDN***
+
+# DAY_4
+# 29 June 2023 
+**COMPONENTS IN A BIGGER PICTURE**

@@ -53,7 +53,7 @@ const techsFormatted = techs.map((tech) => <li>{tech}</li>)
 
 const user = (
   <div>
-    <img src={bala} width={200} height={250} alt='bala image' />
+    <img src={bala} width={200} height={250} alt='balaImage' />
   </div>
 )
 
