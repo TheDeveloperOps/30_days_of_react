@@ -1,7 +1,8 @@
 import bala from './bala.jpg';
 
 const Header=()=>{
-  <header>
+  return(
+    <header>
     <div className='header-wrapper'>
       <h1>Welcome to my 30 days of reactjs learning challenge</h1>
       <h2>Getting Started with react</h2>
@@ -9,6 +10,8 @@ const Header=()=>{
       <p>BALA MURUGAN GANESAN</p>
     </div>
   </header>
+  )
+
 }
 
 const UserCard=()=>{

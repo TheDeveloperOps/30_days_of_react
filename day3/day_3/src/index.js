@@ -1,101 +1,58 @@
-// index.js
-import React from 'react'
-import ReactDOM from 'react-dom'
-// To get the root element from the HTML document
-import bala from './bala.jpg'
-// JSX element, header
-const welcome = 'Welcome to 30 Days Of React'
-const title = 'Getting Started React'
-const subtitle = 'JavaScript Library'
-const author = {
-  firstName: 'BALA MURUGAN',
-  lastName: 'GANESAN',
-}
-const date = 'Jun 28 2023'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import bala from './bala.jpg';
 
-// JSX element, header
-const header = (
+const Header=()=>{
   <header>
     <div className='header-wrapper'>
-      <h1>{welcome}</h1>
-      <h2>{title}</h2>
-      <h3>{subtitle}</h3>
-      <p>
-        Instructor: {author.firstName} {author.lastName}
-      </p>
-      <small>Date: {date}</small>
+      <h1>Welcome to my 30 days of reactjs learning challenge</h1>
+      <h2>Getting Started with react</h2>
+      <h3>Javascript Library</h3>
+      <p>BALA MURUGAN GANESAN</p>
     </div>
   </header>
-)
+}
 
-const numOne = 3
-const numTwo = 2
-
-const result = (
-  <p>
-    {numOne} + {numTwo} = {numOne + numTwo}
-  </p>
-)
-
-const yearBorn = 2003
-const currentYear = new Date().getFullYear()
-const age = currentYear - yearBorn
-const personAge = (
-  <p>
-    {' '}
-    {author.firstName} {author.lastName} is {age} years old
-  </p>
-)
-
-// JSX element, main
-const techs = ['HTML', 'CSS', 'JavaScript']
-const techsFormatted = techs.map((tech) => <li>{tech}</li>)
-
-const user = (
-  <div>
-    <img src={bala} width={200} height={250} alt='balaImage' />
+const UserCard=()=>{
+  <div className='user-card'>
+    <img src={bala} width={200} height={250} alt="author" />
+    <h2>Author: Bala murugan</h2>
   </div>
-)
+}
+const TechList=()=>{
+  const techs = ['HTML', 'CSS', 'JavaScript']
+  const techFormatted=techs.map((tech)=><li key={tech}>tech</li>)
+  return techFormatted
+}
 
-// JSX element, main
-const main = (
+const Main=()=>{
   <main>
-    <div className='main-wrapper'>
+    <div>
       <p>
-        Prerequisite to get started{' '}
-        <strong>
-          <em>react.js</em>
-        </strong>
-        :
+        Prerequisite to get started react.js
       </p>
-      <ul>{techsFormatted}</ul>
-      {result}
-      {personAge}
-      {user}
+      <ul>
+        <TechList/>
+      </ul>
+      <UserCard/>
     </div>
   </main>
-)
-
-const copyRight = 'Copyright 2020'
-
-// JSX element, footer
-const footer = (
+}
+const Footer=()=>{
   <footer>
     <div className='footer-wrapper'>
-      <p>{copyRight}</p>
+      <p>Copyright 2023</p>
     </div>
   </footer>
-)
-
-// JSX element, app
-const app = (
-  <div className='app'>
-    {header}
-    {main}
-    {footer}
+}
+const App=()=>{
+  <div>
+    <Header/>
+    <Main/>
+    <Footer/>
   </div>
-)
+
+}
 
 const rootElement = document.getElementById('root')
-// we render the JSX element using the ReactDOM package
-ReactDOM.render(app, rootElement)
+ReactDOM.render(<App/>,rootElement)
