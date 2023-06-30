@@ -34,3 +34,11 @@ const User = (props) => {
 ```
 
 *props Passing to actual components*
+![Alt text](image.png)
+
+*Props of string type*
+![Alt text](image-1.png)
+
+*Props of number type*
+![Alt text](image-2.png)
+
