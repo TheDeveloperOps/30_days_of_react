@@ -1,0 +1,41 @@
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="app"></div>
+        <script type="text/babel">
+            const header = (
+                <header>
+                    <h1> Hi this bala </h1>
+                    <h2> Im Learning React </h2>
+                    <p> Since I'm out of imaginary words, I'm typing this </p>
+                </header>
+            )
+            // INJECTING DATA INTO JSX ELEMENT 
+            const welcome = 'Welcome my github page'
+            const title ='Here you can find the 30 days of my learning towards reactjs'
+            const authorName = 'BALA MURUGAN'
+            const date ='26 June 2023 '
+            const items = ['nasa','spacex','isro'];
+            const formattedList = items.map((item)=> <li> {item}</li>) ;
+
+            const main = (
+                <div >
+                    <h1>{welcome}</h1>
+                    <h2>{title}</h2>
+                    <ul>{formattedList}</ul>
+                    <p>
+                        Author : {authorName}
+                        </p>
+                    <small>Data: {date}</small>
+                </div>
+            )
+            ReactDOM.render(main,document.querySelector('#app'));
+            // ReactDOM.render(header,document.querySelector('#app'))
+        </script>
+    </body>
+
+
+</html>
