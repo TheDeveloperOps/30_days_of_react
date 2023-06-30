@@ -42,3 +42,14 @@ const User = (props) => {
 *Props of number type*
 ![Alt text](image-2.png)
 
+*Props of boolean type*
+
+![Alt text](image-3.png)
+
+*Props of Array*
+![Alt text](image-4.png)
+
+*Props of object*
+### We may pass an object as props to a React component.
+![Alt text](image-5.png)
+

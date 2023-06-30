@@ -1,0 +1,38 @@
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <h1>SKILLS IN ARRAY</h1>
+        <div id="root"></div>
+        <script type="text/babel">
+                const Header=(props)=>{
+                    return(
+                        <header>
+                            <div>
+                                <h1>{props.data.welcome}</h1>
+                                <h2>{props.data.title}</h2>
+                                <h3>{props.data.subtitle}</h3>
+                            </div>
+                        </header>
+                    )
+                }
+                const App=()=>{
+                    const data={
+                        welcome: 'Hello all welcome to my github page',
+                        title: "30 days of react learning",
+                        subtitle: "learn with me"
+                    }
+                    return(
+                        <Header data={data}/>
+                    )
+                }
+
+                const rootElement = document.getElementById('root')
+                ReactDOM.render(<App />, rootElement)
+        </script>
+    </body>
+
+
+</html>
