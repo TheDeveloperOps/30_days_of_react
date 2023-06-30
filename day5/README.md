@@ -53,3 +53,7 @@ const User = (props) => {
 ### We may pass an object as props to a React component.
 ![Alt text](image-5.png)
 
+*Function as prop*
+### We can pass a function as props type to a React component.
+
+![Alt text](image-6.png)
