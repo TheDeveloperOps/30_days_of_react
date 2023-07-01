@@ -1,0 +1,46 @@
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+                const skills = [
+                ['HTML', 10],
+                ['CSS', 7],
+                ['JavaScript', 9],
+                ['React', 8],
+                ]
+
+                // Skill Component
+                const Skill = ({ skill: [tech, level] }) => (
+                <li>
+                    {tech} {level}
+                </li>
+                )
+
+                // Skills Component
+                const Skills = ({ skills }) => {
+                const skillsList = skills.map((skill) => <Skill skill={skill} />)
+                console.log(skillsList)
+                return <ul>{skillsList}</ul>
+                }
+
+                const App = () => {
+                return (
+                    <div className='container'>
+                    <div>
+                        <h1>Skills Level</h1>
+                        <Skills skills={skills} />
+                    </div>
+                    </div>
+                )
+                }
+            const rootElement = document.querySelector('#root');
+            ReactDOM.render(<App/>,rootElement)
+        </script>
+    </body>
+
+
+</html>

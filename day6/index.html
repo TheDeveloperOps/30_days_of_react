@@ -1,0 +1,31 @@
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            const Number=({numbers})=>{
+                const list = numbers.map((number)=><li key={number}>{number}</li>)
+                return list
+            }
+            const App =()=>{
+                const number = [2,3,4,5,3,2,2,32,44,5]
+                return(
+                    <div>
+                        <h1>NUMBER LIST </h1>
+                    <ul>
+                        <Number numbers={number}/>
+                    </ul>
+                    </div>
+
+                )
+            }
+            const rootElement = document.querySelector('#root');
+            ReactDOM.render(<App/>,rootElement)
+        </script>
+    </body>
+
+
+</html>

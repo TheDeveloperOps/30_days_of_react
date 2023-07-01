@@ -20,3 +20,7 @@
 # DAY-5
 # 30 June 2023 
 **DATA-DRIVEN COMPONENTS**
+
+# DAY_6
+# Date 01 July 2023 
+**MAPPING ARRAYS**

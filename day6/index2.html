@@ -1,0 +1,50 @@
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+                const countries = [
+                { name: 'Finland', city: 'Helsinki' },
+                { name: 'Sweden', city: 'Stockholm' },
+                { name: 'Denmark', city: 'Copenhagen' },
+                { name: 'Norway', city: 'Oslo' },
+                ]
+
+                // Country component
+                const Country = ({ country: { name, city } }) => {
+                return (
+                    <div>
+                    <h1>{name}</h1>
+                    <small>{city}</small>
+                    </div>
+                )
+                }
+
+                // countries component
+                const Countries = ({ countries }) => {
+                const countryList = countries.map((country) => <Country country={country} />)
+                return <div>{countryList}</div>
+                }
+                // App component
+                const App = () => (
+                <div className='container'>
+                    <div>
+                    <h1>Countries List</h1>
+                    <Countries countries={countries} />
+                    </div>
+                </div>
+                )
+
+                const rootElement = document.querySelector('#root')
+                ReactDOM.render(<App />, rootElement)
+        </script>
+    </body>
+
+
+</html>
+
+
+
