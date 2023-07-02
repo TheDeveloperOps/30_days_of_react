@@ -1,0 +1,33 @@
+
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            class App extends React.Component{
+                greetPeople = () =>{
+                    alert('Hello every one, welcome to my page')
+                }
+            
+            render(){
+                return(
+                    <header>
+                        <div>
+                            <h1>Press the button to get greeted</h1>
+                            <h2>Then you'll know how function works inside of class component</h2>
+                            <button onClick={this.greetPeople}>Greet</button>
+                        </div>
+                    </header>
+                )
+            }
+        }
+            const rootElement = document.querySelector('#root');
+            ReactDOM.render(<App/>,rootElement)
+        </script>
+    </body>
+
+
+</html>
