@@ -24,3 +24,7 @@
 # DAY_6
 # Date 01 July 2023 
 **MAPPING ARRAYS**
+
+# DAY_7
+# Date 02 July 2023 
+**MAPPING ARRAYS**

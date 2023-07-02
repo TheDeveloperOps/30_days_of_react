@@ -1,0 +1,123 @@
+
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+                // TechList Component
+                // functional component
+                // const TechList = () => {
+                //   const techs = ['HTML', 'CSS', 'JavaScript']
+                //   const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+                //   return techsFormatted
+                // }
+
+                // TechList Component
+                // class base component
+                class TechList extends React.Component {
+                  constructor(props) {
+                    super(props)
+                  }
+                  render() {
+                    const techs = ['HTML', 'CSS', 'JavaScript']
+                    const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+                    return techsFormatted
+                  }
+                }
+
+                // Main Component
+                // Functional Component
+                // const Main = () => (
+                //   <main>
+                //     <div className='main-wrapper'>
+                //       <p>Prerequisite to get started react.js:</p>
+                //       <ul>
+                //         <TechList />
+                //       </ul>
+                //     </div>
+                //   </main>
+                // )
+
+                // Main Component
+                // Class Component
+                class Main extends React.Component {
+                  constructor(props) {
+                    super(props)
+                  }
+                  render() {
+                    return (
+                      <main>
+                        <div className='main-wrapper'>
+                          <p>Prerequisite to get started react.js:</p>
+                          <ul>
+                            <TechList />
+                          </ul>
+                        </div>
+                      </main>
+                    )
+                  }
+                }
+
+                // Footer Component
+                // Functional component
+                // const Footer = () => (
+                //   <footer>
+                //     <div className='footer-wrapper'>
+                //       <p>Copyright 2020</p>
+                //     </div>
+                //   </footer>
+                // )
+
+                // Footer Component
+                // Class component
+                class Footer extends React.Component {
+                  constructor(props) {
+                    super(props)
+                  }
+                  render() {
+                    return (
+                      <footer>
+                        <div className='footer-wrapper'>
+                          <p>Copyright 2023</p>
+                        </div>
+                      </footer>
+                    )
+                  }
+                }
+
+                // The App, or the parent or the container component
+                // Functional Component
+                // const App = () => (
+                //   <div className='app'>
+                //     <Header />
+                //     <Main />
+                //     <Footer />
+                //   </div>
+                // )
+
+                // The App, or the parent or the container component
+                // Class Component
+                class App extends React.Component {
+                  constructor(props) {
+                    super(props)
+                  }
+                  render() {
+                    return (
+                      <div className='app'>
+                        <TechList/>
+                        <Main />
+                        <Footer />
+                      </div>
+                    )
+                  }
+                }
+            const rootElement = document.querySelector('#root');
+            ReactDOM.render(<App/>,rootElement)
+        </script>
+    </body>
+
+
+</html>
