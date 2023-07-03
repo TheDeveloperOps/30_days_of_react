@@ -28,3 +28,7 @@
 # DAY_7
 # Date 02 July 2023 
 **MAPPING ARRAYS**
+
+# DAY_8
+# Date 03 July 2023 
+**REACT STATES**

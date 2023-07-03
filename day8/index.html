@@ -1,0 +1,33 @@
+
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+                class App extends React.Component {
+                // declaring state
+                state = {
+                    count: 5,
+                }
+                render() {
+                    // accessing the state value
+                    const count = this.state.count
+                    return (
+                    <div className='App'>
+                        <h1>{count} </h1>
+                    </div>
+                    )
+                }
+                }
+                const rootElement = document.getElementById('root')
+                ReactDOM.render(<App />, rootElement)
+        </script>
+    </body>
+
+
+</html>
+
+

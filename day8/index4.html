@@ -1,0 +1,49 @@
+
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+                class App extends React.Component {
+                // declaring state
+                state = {
+                    image: 'https://www.smithsstationah.com/imagebank/eVetSites/Feline/01.jpg',
+                }
+                changeAnimal = () => {
+                    let dogURL =
+                    'https://cdn.britannica.com/16/234216-050-C66F8665/beagle-hound-dog.jpg?w=400&h=300&c=crop'
+                    let catURL =
+                    'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg?w=400&h=300&c=crop'
+                    let image = this.state.image === catURL ? dogURL : catURL
+                    this.setState({ image })
+                }
+
+                render() {
+                    // accessing the state value
+                    const count = this.state.count
+                    return (
+                    <div className='App'>
+                        <h1>30 Days Of React</h1>
+                        <div className='animal'>
+                        <img src={this.state.image} alt='animal' />
+                        </div>
+
+                        <button onClick={this.changeAnimal} className='btn btn-add'>
+                        Change
+                        </button>
+                    </div>
+                    )
+                }
+                }
+                const rootElement = document.getElementById('root')
+                ReactDOM.render(<App />, rootElement)
+        </script>
+    </body>
+
+
+</html>
+
+
