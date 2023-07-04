@@ -219,7 +219,6 @@ function PackingList() {
                         status = <h3>Please Login</h3>
                         text = 'Login'
                         }
-
                         return (
                         <div className='app'>
                             <Header data={data} />
@@ -233,12 +232,7 @@ function PackingList() {
                 ReactDOM.render(<App />, rootElement)
         </script>
     </body>
-
-
 </html>
-
-
-
 ```
 
 *output of the following *
