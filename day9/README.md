@@ -1,41 +1,64 @@
-# DAY_8
-# Date 03 July 2023 
+# DAY_9
+# Date 04 July 2023 
 
-# REACT STATES 
-**What exactly is a state means? The English meaning of state is the particular condition that someone or something is in at a specific time.**
+# CONDITIONAL RENDERING 
+**As we can understand from the term, conditional rendering is a way to render different JSX or component at different condition. We can implement conditional rendering using regular if and else statement, ternary operator and &&.**
 
-## How to set a state in react ?
-**We set an initial state inside the constructor or outside the constructor of a class based component. We do not directly change or mutate the state but we use the setState() method to reset to a new state. . As you can see below in the state object we have count with initial value 0. We can access the state object using this.state and the property name. See the example below.**
+*Your components will often need to display different things depending on different conditions. In React, you can conditionally render JSX using JavaScript syntax like if statements, &&, and ? : operators.*
+
+## Conditional returning  JSX
 
 ```
-import React from 'react';
-import ReactDOM from 'react-dom';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="/bundle.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
 
-class App from React.component{
-    state={
-        count:0;
-    }
-    const count=this.state.count;
-    render(){
-        return(
-                    <div>
-            <h1>{count}</h1>
-        </div>
-        )
-
-    }
-    const rootElement = document.getElementById('#root');
-    ReactDOM.render(<App/>,rootElement)
-
+function Item({ name, isPacked }) {
+  return <li className="item">{name}</li>;
 }
+function PackingList() {
+  return (
+    <section>
+      <h1>Bala Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
+  );
+}
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<PackingList/>, rootElement)
+    </script>
+</body>
+</html>
 ```
-*output of the above*
-![Alt text](image.png)
+![Alt text](image.png)  
 
-*As you can see in the browser. We can increase or decrease the value the state by changing the value of the state using JavaScript method manually.*
+## Conditional Rendering using If and Else statement
 
-## Resetting a state using a javascript method 
-*Now, let's add some methods which increase or decrease the value of count by clicking a button. Let us add a button to increase and a button to decrease the value of count. To set the state we use react method this.setState. See the example below*
+**In the code below we are going to check the logged in status of the user**
 ```
 
 <html>
@@ -46,22 +69,50 @@ class App from React.component{
     <body>
         <div id="root"></div>
         <script type="text/babel">
-                class App extends React.Component {
-                // declaring state
-                state = {
-                    count: 5,
+                class Header extends React.Component{
+                    render(){
+                        const {
+                        name,
+                        post,
+                        country,
+                    } = this.props.data; 
+                        return(
+                            <header>
+                                <div>
+                                <h1>WELCOME TO THE TEST SITE</h1>
+                                <h2>The author: {name}</h2>
+                                <h2>Post      : {post}</h2>
+                                <h3>Living in : {country}</h3>
+                                </div>
+                            </header>
+                        )
+                    }
                 }
-                render() {
-                    // accessing the state value
-                    const count = this.state.count
-                    return (
-                    <div className='App'>
-                        <h1>{count}</h1>
-                        <button onClick={()=>this.setState({count: this.state.count+=1})}>increment</button>
-                        <button onClick={()=>this.setState({count: this.state.count-=1})}>idecrement</button>
-                    </div>
-                    )
-                }
+
+                class App extends React.Component{
+                    state ={
+                        loggedIn:true,
+                    }
+                    render(){
+                        const data={
+                            name:"Bala murugan",
+                            post:'React Developer',
+                            country:'India'
+                        }
+                        let status
+                        if(this.state.loggedIn){
+                            status= <h1>Welcome to the 30 days of my reactjs learning challenge</h1>
+                        }
+                        else{
+                            status= <h1>Kindly log in</h1>
+                        }
+                        return(
+                        <div>
+                            <Header data={data}/>
+                            {status}
+                        </div>
+                        )
+                    }
                 }
                 const rootElement = document.getElementById('root')
                 ReactDOM.render(<App />, rootElement)
@@ -70,13 +121,15 @@ class App from React.component{
 
 
 </html>
-```
 
-*output of the above*
+
+
+```
+*Output of the above code*
+
 ![Alt text](image-1.png)
 
-## Doing the state change stuff inside button is not a good practice to make it as  separate function
-
+## Handling the state through toggle 
 ```
 
 <html>
@@ -87,29 +140,95 @@ class App from React.component{
     <body>
         <div id="root"></div>
         <script type="text/babel">
-                class App extends React.Component {
-                // declaring state
-                state = {
-                    count: 5,
-                }
-                addOne=()=>{
-                    this.setState({count:this.state.count+1})
-                }
-                minusOne=()=>{
-                    this.setState({count:this.state.count-1})
-                }
-                render() {
-                    // accessing the state value
-                    const count = this.state.count
-                    return (
-                    <div className='App'>
-                        <h1>{count}</h1>
-                        <button onClick={this.addOne}>increment</button>
-                        <button onClick={this.minusOne}>decrement</button>
-                    </div>
+                    // A button component
+                    const Button = ({ text, onClick, style }) => (
+                    <button style={style} onClick={onClick}>
+                        {text}
+                    </button>
                     )
-                }
-                }
+
+                    // CSS styles in JavaScript Object
+                    const buttonStyles = {
+                    backgroundColor: '#61dbfb',
+                    padding: 10,
+                    border: 'none',
+                    borderRadius: 5,
+                    margin: '3px auto',
+                    cursor: 'pointer',
+                    fontSize: 22,
+                    color: 'white',
+                    }
+
+                    // class based component
+                    class Header extends React.Component {
+                    render() {
+                        console.log(this.props.data)
+                        const {
+                        welcome,
+                        title,
+                        subtitle,
+                        author: { firstName, lastName },
+                        date,
+                        } = this.props.data
+
+                        return (
+                        <header>
+                            <div className='header-wrapper'>
+                            <h1>{welcome}</h1>
+                            <h2>{title}</h2>
+                            <h3>{subtitle}</h3>
+                            <p>
+                                {firstName} {lastName}
+                            </p>
+                            <small>{date}</small>
+                            </div>
+                        </header>
+                        )
+                    }
+                    }
+
+                    class App extends React.Component {
+                    state = {
+                        loggedIn: false,
+                    }
+                    handleLogin = () => {
+                        this.setState({
+                        loggedIn: !this.state.loggedIn,
+                        })
+                    }
+
+                    render() {
+                        const data = {
+                        welcome: '30 Days Of React',
+                        title: 'Getting Started React',
+                        subtitle: 'JavaScript Library',
+                        author: {
+                            firstName: 'Asabeneh',
+                            lastName: 'Yetayeh',
+                        },
+                        date: 'Oct 9, 2020',
+                        }
+
+                        let status
+                        let text
+
+                        if (this.state.loggedIn) {
+                        status = <h1>Welcome to 30 Days Of React</h1>
+                        text = 'Logout'
+                        } else {
+                        status = <h3>Please Login</h3>
+                        text = 'Login'
+                        }
+
+                        return (
+                        <div className='app'>
+                            <Header data={data} />
+                            {status}
+                            <Button text={text} style={buttonStyles} onClick={this.handleLogin} />
+                        </div>
+                        )
+                    }
+                    }
                 const rootElement = document.getElementById('root')
                 ReactDOM.render(<App />, rootElement)
         </script>
@@ -117,63 +236,11 @@ class App from React.component{
 
 
 </html>
+
+
+
 ```
-*output of the above*
+
+*output of the following *
 ![Alt text](image-2.png)
 
-
-# Examples 
-```
-
-<html>
-    <title>HELLO REACT</title>
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <body>
-        <div id="root"></div>
-        <script type="text/babel">
-                class App extends React.Component {
-                // declaring state
-                state = {
-                    image: 'https://www.smithsstationah.com/imagebank/eVetSites/Feline/01.jpg',
-                }
-                changeAnimal = () => {
-                    let dogURL =
-                    'https://cdn.britannica.com/16/234216-050-C66F8665/beagle-hound-dog.jpg?w=400&h=300&c=crop'
-                    let catURL =
-                    'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg?w=400&h=300&c=crop'
-                    let image = this.state.image === catURL ? dogURL : catURL
-                    this.setState({ image })
-                }
-
-                render() {
-                    // accessing the state value
-                    const count = this.state.count
-                    return (
-                    <div className='App'>
-                        <h1>30 Days Of React</h1>
-                        <div className='animal'>
-                        <img src={this.state.image} alt='animal' />
-                        </div>
-
-                        <button onClick={this.changeAnimal} className='btn btn-add'>
-                        Change
-                        </button>
-                    </div>
-                    )
-                }
-                }
-                const rootElement = document.getElementById('root')
-                ReactDOM.render(<App />, rootElement)
-        </script>
-    </body>
-
-
-</html>
-
-
-
-```
-![Alt text](image-3.png)
-![Alt text](image-4.png)

@@ -1,0 +1,63 @@
+
+<html>
+    <title>HELLO REACT</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+                class Header extends React.Component{
+                    render(){
+                        const {
+                        name,
+                        post,
+                        country,
+                    } = this.props.data; 
+                        return(
+                            <header>
+                                <div>
+                                <h1>WELCOME TO THE TEST SITE</h1>
+                                <h2>The author: {name}</h2>
+                                <h2>Post      : {post}</h2>
+                                <h3>Living in : {country}</h3>
+                                </div>
+                            </header>
+                        )
+                    }
+                }
+
+                class App extends React.Component{
+                    state ={
+                        loggedIn:true,
+                    }
+                    render(){
+                        const data={
+                            name:"Bala murugan",
+                            post:'React Developer',
+                            country:'India'
+                        }
+                        let status
+                        if(this.state.loggedIn){
+                            status= <h1>Welcome to the 30 days of my reactjs learning challenge</h1>
+                        }
+                        else{
+                            status= <h1>Kindly log in</h1>
+                        }
+                        return(
+                        <div>
+                            <Header data={data}/>
+                            {status}
+                        </div>
+                        )
+                    }
+                }
+                const rootElement = document.getElementById('root')
+                ReactDOM.render(<App />, rootElement)
+        </script>
+    </body>
+
+
+</html>
+
+
