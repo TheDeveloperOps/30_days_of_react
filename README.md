@@ -32,3 +32,11 @@
 # DAY_8
 # Date 03 July 2023 
 **REACT STATES**
+
+# DAY_9
+# Date 04 July 2023 
+**CONDITIONAL RENDERING**
+
+# DAY_10
+# Date 05 July 2023 
+**REACT STATES**
