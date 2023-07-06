@@ -53,7 +53,7 @@
                             author:"Bala murugan",
                             title:'ReactJS challenge'
                         }
-                        let state 
+                        let status
                         let text 
                         if(this.state.loggedIn){
                             status = <h1>Welcome to 30 Days of react </h1>
@@ -65,7 +65,9 @@
                         }
                         return(
                             <div>
+                                
                                 <Header data={data}/>
+                                {status}
                                 <Button text={text} style={buttonStyles} onClick={this.handleLogin} />
                             </div>
                         )
