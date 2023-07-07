@@ -13,33 +13,7 @@
     <div id="app"></div>
     <div id="app-jsx"></div>
     <script type="text/babel">
-        <div>
-            <img src="profile.jpg" alt="Profile photo" />
-            <h1>Welcome back people, this is bala </h1>
-        </div>
-        class App extends React.Component{
-            state ={
-                name:'',
-            }
-            handleChange = (e) =>{
-                const newName =e.target.value
-                this.setState({name:newName});
-            }
-            render(){
-                const name = this.state.name;
-                return(
-                    <div>
-                        <h1>Enter your name </h1>
-                        <input type="password" placeholder="Your name please " value={name} onChange={this.handleChange}/>
-                        <h1>{name}</h1>
-
-                    </div>
-                )
-            }
-        }
-        const node = document.getElementById("app");
-        const root = ReactDOM.createRoot(node)
-        root.render(<App/>)
+        class App extedn
     </script>
 </body>
 </html>
