@@ -1,5 +1,181 @@
 # DAY_13
 # Date 08 July 2023 
 
-# REACT FORMS 
+# REACT UNCONTROLLED COMPONENTS 
 
+**To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM. In uncontrolled input we get data from input fields like traditional HTML form data handling.**
+
+## Controlled VS Uncontrolled components 
+
+**In React, controlled components refer to components that have their state and behavior controlled by the parent component. These components rely on props passed down from the parent component to update their state and behavior. Uncontrolled components refer to components that manage their own state internally.**
+
+## Getting data from an uncontrolled input 
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <h1 id="now"></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <script type="text/babel">
+        <div>
+            <img src="profile.jpg" alt="Profile photo" />
+            <h1>Welcome back people, this is bala </h1>
+        </div>
+        class App extends React.Component {
+            firstName = React.createRef()
+
+            handleSubmit = (e) => {
+                e.preventDefault()
+                console.log(this.firstName.current.value)
+            }
+
+            render() {
+                return (
+                <div className='App'>
+                    <form onSubmit={this.handleSubmit}>
+                    <label htmlFor='firstName'>First Name: </label>
+                    <input
+                        type='text'
+                        id='firstName'
+                        name='firstName'
+                        placeholder='First Name'
+                        ref={this.firstName}
+                    />
+                    <button type='submit'>Submit</button>
+                    </form>
+                </div>
+                )
+            }
+            }
+        const node = document.getElementById("app");
+        const root = ReactDOM.createRoot(node)
+        root.render(<App/>)
+    </script>
+</body>
+</html>
+```
+
+*Output from the above *
+![Alt text](image-1.png)
+
+## Getting multiple inputs from uncontrolled fields
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <h1 id="now"></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <script type="text/babel">
+        <div>
+            <img src="profile.jpg" alt="Profile photo" />
+            <h1>Welcome back people, this is bala </h1>
+        </div>
+            class App extends React.Component {
+                    firstName = React.createRef()
+                    lastName = React.createRef()
+                    country = React.createRef()
+                    title = React.createRef()
+
+                    handleSubmit = (e) => {
+                        // stops the default behavior of form element specifically refreshing of page
+                        e.preventDefault();
+
+            
+                        // console.log(this.lastName.current.value)
+                        // console.log(this.title.current.value)
+                        // console.log(this.country.current.value)
+
+                        const data = {
+                        firstName: this.firstName.current.value,
+                        lastName: this.lastName.current.value,
+                        title: this.title.current.value,
+                        country: this.country.current.value,
+                        }
+                        // the is the place we connect backend api to send the data to the database
+                        console.log(data)
+                    }
+
+                    render() {
+                        const data = this.data;
+                        // console.log(data)
+                        return (
+                        <div className='App'>
+                            <h3>Add Student</h3>
+                            <form onSubmit={this.handleSubmit}>
+                            <div>
+                                <input
+                                type='text'
+                                name='firstName'
+                                placeholder='First Name'
+                                ref={this.firstName}
+                                onChange={this.handleChange}
+                                />
+                            </div>
+                            <div>
+                                <input
+                                type='text'
+                                name='lastName'
+                                placeholder='Last Name'
+                                ref={this.lastName}
+                                onChange={this.handleChange}
+                                />
+                            </div>
+                            <div>
+                                <input
+                                type='text'
+                                name='country'
+                                placeholder='Country'
+                                ref={this.country}
+                                onChange={this.handleChange}
+                                />
+                            </div>
+                            <div>
+                                <input
+                                type='text'
+                                name='title'
+                                placeholder='Title'
+                                ref={this.title}
+                                onChange={this.handleChange}
+                                />
+                            </div>
+
+                            <button className='btn btn-success'>Submit</button>
+                            </form>
+                        </div>
+                        )
+                    }
+                    }
+        const node = document.getElementById("app");
+        const root = ReactDOM.createRoot(node)
+        root.render(<App/>)
+    </script>
+</body>
+</html>
+```
+*Output of the above*
+![Alt text](image.png)
+
+
+*Day 13 ends*
