@@ -285,3 +285,7 @@
 ## UNMOUNTING 
 
 **The final phase in the lifecycle of a component is unmounting. The unmounting phase removes component from the DOM. The componentWillUnmount method is the only built-in method that gets called when a component is unmounted.**
+
+
+
+
