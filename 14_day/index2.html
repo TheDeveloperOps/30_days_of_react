@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <h1 id="now"></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <script type="text/babel">
+        <div>
+            <img src="profile.jpg" alt="Profile photo" />
+            <h1>EXAMPLE FOR ComponentDidMount</h1>
+        </div>
+        class App extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+                    fName:'bala',
+                }
+            }
+            componentDidMount(){
+                setTimeout(()=>{
+                    this.setState({
+                        fName:"murugan"
+                    })
+                },3000)
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>COMPONENT DID MOUNT EXAMPLE </h1>
+                        {this.state.fName}
+                    </div>
+                )
+            }
+        }
+        const node = document.getElementById("app");
+        const root = ReactDOM.createRoot(node)
+        root.render(<App/>)
+    </script>
+</body>
+</html>
