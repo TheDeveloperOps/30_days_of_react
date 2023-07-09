@@ -222,7 +222,8 @@
 </body>
 </html>
 ```
-![Alt Text](E:\movie\Video To Gif Maker\GifMaker_20230709130554470.gif)
+![GifMaker_20230709130554470](https://github.com/TheDeveloperOps/30_days_of_react/assets/82383377/a6178eeb-d600-4303-8b59-af2aead16bbc)
+
 
 ## componentDidUpdate
 
