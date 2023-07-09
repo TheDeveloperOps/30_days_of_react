@@ -1,4 +1,6 @@
-﻿# 30_Days_ReactJS_Streak
+![image](https://github.com/TheDeveloperOps/30_days_of_react/assets/82383377/d7da2c7d-b787-4b46-a293-0f73fb35694c)
+
+ # 30_Days_ReactJS_Streak
 
 # DAY_1
 # 26 June 2023
