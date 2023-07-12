@@ -1,11 +1,15 @@
-import { useNavigate} from "react-router-dom"
+import { Routes , Route} from "react-router-dom"
+import { Profile } from "./Profile"
+import { Settings } from "./Settings"
 
 
 export const User = () => {
-    const navigate  = useNavigate()
   return (
-    <div>User 
-        <button onClick={()=> navigate('/')}> to home</button>
+    <div>
+      <Routes>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/settings" element={<Settings/>}/>
+      </Routes>
     </div>
     
   )

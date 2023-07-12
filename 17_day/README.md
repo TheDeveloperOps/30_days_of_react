@@ -140,3 +140,23 @@ export const User = () => {
 ```
 *Output of the above*
 ![Alt text](image-3.png)
+
+## Nested Routing 
+**We use nested routing in our application so that a parent component has control over its child component at the route level.**
+
+```
+import { Link } from "react-router-dom"
+export const Home = () => {
+  return (
+    <div>
+      Home  
+        <Link to='/user/profile'>Profile</Link>
+        <Link to='/user/settings'>Settings</Link>
+    </div>
+  )
+}
+```
+*Output*
+![Alt text](image-4.png)
+![Alt text](image-5.png)
+![Alt text](image-6.png)
