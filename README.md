@@ -72,4 +72,7 @@
 # Date 12 July 2023 
 **REACT ROUTER**
 
+# DAY_18
+# Date 13 July 2023 
+**REACT FETCH AND AXIOS**
 
