@@ -1,0 +1,13 @@
+.content-container{
+    display:flex;
+    float: left;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    gap: 5em;
+}
+.each-cat{
+    border-style: solid;
+    border-color: blue;
+    width: auto;
+    padding:10px;
+}

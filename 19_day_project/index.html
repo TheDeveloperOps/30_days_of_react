@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chela+One&display=swap" rel="stylesheet">
+    <title>COUNTRY API</title>
+    <style>
+        /* CSS styles omitted for brevity */
+    </style>
+</head>
+<body>
+    <h1>RANDOM COUNTRY</h1>
+    <div id="app"></div>
+    <script type="text/babel">
+        const CountryInfo = () => {
+          const [catImageUrl, setCatImageUrl] = React.useState('');
+          const [isLoading, setIsLoading] = React.useState(true);
+
+          React.useEffect(() => {
+            setIsLoading(true);
+            fetch('https://api.thecatapi.com/v1/images/search?breed_ids=abys')
+              .then((response) => response.json())
+              .then((data) => {
+                if (Array.isArray(data) && data.length > 0) {
+                  const catImage = data[0].url; // Access the image URL from the first item in the response array
+                  setCatImageUrl(catImage);
+                } else {
+                  console.log('Invalid data format:', data);
+                }
+                setIsLoading(false);
+              })
+              .catch((error) => {
+                console.log('Error:', error);
+                setIsLoading(false);
+              });
+          }, []);
+
+          if (isLoading) {
+            return <p>Loading...</p>;
+          }
+
+          return (
+            <div className='container'>
+              {catImageUrl && <img src={catImageUrl} alt="Abyssinian Cat" width={250} />}
+              <div className="text">
+                <button type='reset' className="bn47" onClick={() => { window.location.reload(); }}>Dice</button>
+              </div>
+            </div>
+          );
+        };
+
+        const rootElement = ReactDOM.createRoot(document.getElementById('app'));
+        rootElement.render(<CountryInfo />);
+    </script>
+    <div>
+        <footer class="foot">&copy; 2023 @BalaTheDeveloperOps</footer>
+    </div>
+</body>
+</html>
