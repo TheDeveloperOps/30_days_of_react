@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>COUNTER</title>
+</head>
+<body>
+    <h1>COUNT</h1>
+    <div id="app"></div>
+    <script type="text/babel">
+        function App() {
+        const [inputValue, setInputValue] = React.useState("");
+        const previousInputValue = React.useRef("");
+
+        React.useEffect(() => {
+            previousInputValue.current = inputValue;
+        }, [inputValue]);
+
+        return (
+            <>
+            <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+            />
+            <h2>Current Value: {inputValue}</h2>
+            <h2>Previous Value: {previousInputValue.current}</h2>
+            </>
+        );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('app'));
+        root.render(<App />);
+    </script>
+    <div>
+        <footer class="foot">&copy; 2023 @BalaTheDeveloperOps</footer>
+    </div>
+</body>
+</html>
