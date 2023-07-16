@@ -64,6 +64,7 @@ function ImageGallery(){
 ```
 *Output of the above*
 ![Alt text](image.png)
+![counter](https://github.com/TheDeveloperOps/30_days_of_react/assets/82383377/a4b325fe-bb11-47e8-a1a4-73bdeb992bba)
 
 ## EFFECT HOOK
 ### useEffect 
