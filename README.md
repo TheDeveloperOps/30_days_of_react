@@ -8,12 +8,10 @@
 
   
 
-<sub>Author: <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> October, 2020</small></sub>
+<sub>Author: <a href="https://www.linkedin.com/in/bala-murugan-ganesan/" target="_blank">Bala Murugan Ganesan</a><br>
+<small> July 2023</small></sub>
 
 </div>
-
-[Day 1 >>](./01_Day_JavaScript_Refresher/01_javascript_refresher.md)
 
 | # Day |                                                           Topics                                                            |
 | ----- | :-------------------------------------------------------------------------------------------------------------------------: |
