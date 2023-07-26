@@ -1,0 +1,18 @@
+.content-container{
+    align-items: center;
+    margin: auto;
+    display:flex;
+    float: left; 
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgb(252, 222, 222);
+}
+.content{
+    /* text-align: center; */
+    margin-top: 10px;
+    border-style:  solid;
+    border-width: 30px;
+    border-color: rgb(215, 142, 225);
+    width: auto;
+    padding:10px;
+}

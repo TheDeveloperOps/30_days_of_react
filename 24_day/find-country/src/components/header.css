@@ -1,0 +1,14 @@
+.header-wrapper{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: rgb(252, 222, 222);
+}
+.header-wrapper h1{
+    color: rgb(245, 131, 0);
+    margin: 0;
+}
+.header-wrapper h3{
+    color: rgb(57, 57, 57);
+    margin: 0;
+}
