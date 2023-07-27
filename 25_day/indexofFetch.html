@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.15.8/babel.min.js"></script>
+    <title>CUSTOM HOOKS BUILDING</title>
+</head>
+<body>
+    <h1>Fetching data using custom hooks</h1>
+    <div id="app"></div>
+    <script type="text/babel">
+        const useFetch =(url)=>{
+            const [data,setData] = React.useState(null);
+            React.useEffect(()=>{
+                fetch(url)
+                .then((res)=>res.json())
+                .then((data)=>setData(data))
+            },[url])
+            return [data]
+        }
+        const Home = () => {
+        const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
+
+            return (
+                <>
+                {data &&
+                    data.map((item) => {
+                    return <p key={item.id}>{item.title}</p>;
+                    })}
+                </>
+            );
+            };
+            const root = ReactDOM.createRoot(document.getElementById('app'));
+            root.render(<Home />);
+    </script>
+    <div>
+        <footer class="foot">&copy; 2023 @BalaTheDeveloperOps</footer>
+    </div>
+</body>
+</html>
